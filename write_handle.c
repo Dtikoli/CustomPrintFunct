@@ -11,7 +11,7 @@
  * @size: Size specifier
  * Return: 1 or 2;
  */
-int wirte_handle(const char *format, int *index, va_list list, char buffer[],
+int write_handle(const char *format, int *index, va_list list, char buffer[],
 			int flags, int width, int precision, int size)
 {
 	int i, un_len = 0, pr_chars = -1;
@@ -20,7 +20,7 @@ int wirte_handle(const char *format, int *index, va_list list, char buffer[],
 		{'i', print_int}, {'d', print_int}, {'b', print_binary},
 		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
 		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
-		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
+		{'r', print_reverse}, {'R', print_rot13string}, {'\0', '\0'}
 	};
 
 	for (i = 0; formats[i].opts != '\0'; i++)
@@ -47,3 +47,4 @@ int wirte_handle(const char *format, int *index, va_list list, char buffer[],
 	}
 	return (pr_chars);
 }
+

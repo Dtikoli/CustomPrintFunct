@@ -71,4 +71,3 @@ long int convert_size_num(unsigned long int num, int size)
 		return ((unsigned short)num);
 	return ((unsigned int)num);
 }
-
